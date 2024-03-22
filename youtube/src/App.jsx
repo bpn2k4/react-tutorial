@@ -4,6 +4,7 @@ import DefaultLayout from './layouts/DefaultLayout'
 import Home from './pages/Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { ThemeProvider } from './hooks/useTheme'
+import { StoreProvider } from './hooks/useStore'
 
 const routes = [
   {
@@ -35,10 +36,12 @@ function App() {
 
   return (
     <I18nextProvider i18n={i18next}>
-      <ThemeProvider>
-        <AppRouter
-        />
-      </ThemeProvider>
+      <StoreProvider>
+        <ThemeProvider>
+          <AppRouter
+          />
+        </ThemeProvider>
+      </StoreProvider>
     </I18nextProvider>
   )
 }

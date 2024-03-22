@@ -1,1 +1,25 @@
-{}
+{
+  "Login": "Đăng nhập",
+  "Notification": "Thông báo",
+  "YourChannel": "Kênh của bạn",
+  "GoogleAccount": "Tài khoản Google",
+  "ChangeAccount": "Chuyển tài khoản",
+  "Logout": "Đăng xuất",
+  "YoutubeStudio": "Youtube Studio",
+  "BillAndSubscribe": "Giao dịch mua và gói thành viên",
+  "YourData": "Dữ liệu của bạn",
+  "Theme": "Giao diện",
+  "Dark": "Tối",
+  "Light": "Sáng",
+  "Language": "Ngôn ngữ",
+  "Vietnamese": "Tiếng Việt",
+  "English": "English",
+  "LimitMode": "Chế độ hạn chế",
+  "On": "Bật",
+  "Off": "Tắt",
+  "Location": "Địa điểm",
+  "Shortcut": "Phím tắt",
+  "Setting": "Cài đặt",
+  "Help": "Trợ giúp",
+  "SendFeedback": "Gửi ý kiến phản hồi"
+}
