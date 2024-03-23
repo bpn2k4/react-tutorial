@@ -11,6 +11,8 @@ const utilities = {
   '.bg-modal': { '@apply bg-rgb-255 dark:bg-rgb-40': 0 },
   '.offset-0': { top: 0, left: 0, right: 0, bottom: 0 },
   '.center': { display: 'flex', alignItems: 'center', justifyContent: 'center' },
+  '.text-blue': { '@apply text-[#3ea6ff]': 0 },
+  '.bg-blue': { '@apply bg-[#3ea6ff]': 0 },
   // '.clickable': { '@apply active:scale-95': 0 },
   // '.pause-animation': { animationPlayState: 'paused' },
   // '.run-animation': { animationPlayState: 'running' },

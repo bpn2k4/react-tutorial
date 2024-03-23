@@ -1,6 +1,7 @@
 import { twMerge } from 'tailwind-merge'
-import CircleButton from './CircleButton'
+
 import { IconMic, IconSearch } from './Icon'
+import CircleButton from './CircleButton'
 
 const SearchBar = () => {
 

@@ -9,6 +9,6 @@ type initialState = {
 }
 
 export type useStore = () => initialState & {
-  login: Function,
-  logout: Function
+  login: () => void,
+  logout: () => void
 }

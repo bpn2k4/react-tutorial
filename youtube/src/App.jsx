@@ -1,10 +1,12 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { I18nextProvider } from 'react-i18next'
+
 import i18next from './languages/i18next'
 import DefaultLayout from './layouts/DefaultLayout'
-import Home from './pages/Home'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import GlobalComponent from './components/GlobalComponent'
 import { ThemeProvider } from './hooks/useTheme'
 import { StoreProvider } from './hooks/useStore'
+import Home from './pages/Home'
 
 const routes = [
   {
@@ -16,7 +18,7 @@ const routes = [
   }
 ]
 
-const AppRouter = () => {
+const AppRouter = ({ children }) => {
 
   return (
     <BrowserRouter>
@@ -28,6 +30,7 @@ const AppRouter = () => {
             element={element} />
         ))}
       </Routes>
+      {children}
     </BrowserRouter>
   )
 }
@@ -39,6 +42,7 @@ function App() {
       <StoreProvider>
         <ThemeProvider>
           <AppRouter
+            children={<GlobalComponent />}
           />
         </ThemeProvider>
       </StoreProvider>

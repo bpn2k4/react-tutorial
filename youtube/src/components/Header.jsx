@@ -1,13 +1,14 @@
 import { twMerge } from 'tailwind-merge'
 import { Link } from 'react-router-dom'
 
+import { IconThreeLine, IconYoutubeLogo } from './Icon'
 import useStore from '../hooks/useStore'
 import ButtonAvatarSetting from './ButtonAvatarSetting'
 import ButtonLogin from './ButtonLogin'
 import ButtonNotification from './ButtonNotification'
 import CircleButton from './CircleButton'
 import SearchBar from './SearchBar'
-import { IconThreeLine, IconYoutubeLogo } from './Icon'
+import Utils from '../utils'
 
 const Header = () => {
 
@@ -16,6 +17,7 @@ const Header = () => {
       <div className='flex flex-row center'>
         <CircleButton
           icon={<IconThreeLine />}
+          onClick={() => Utils.SideBarLeft.show()}
         />
         <Link to='/' className='px-4'>
           <IconYoutubeLogo />

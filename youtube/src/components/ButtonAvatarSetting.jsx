@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next'
 import { twMerge } from 'tailwind-merge'
 
 import CircleButton from './CircleButton'
+import ButtonRowIconStart from './ButtonRowIconStart'
 import {
-  IconCaret,
   IconChangeAccount,
   IconEarth,
   IconFeedback,
@@ -104,16 +104,16 @@ const Setting = ({ isLogin, closeMenu }) => {
       )}>
         {isLogin && (
           <div className='py-1 border-b border-primary'>
-            <ButtonRow
+            <ButtonRowIconStart
               icon={<IconGoogle />}
               title={t("GoogleAccount")}
             />
-            <ButtonRow
+            <ButtonRowIconStart
               icon={<IconChangeAccount />}
               title={t("ChangeAccount")}
               caret={true}
             />
-            <ButtonRow
+            <ButtonRowIconStart
               icon={<IconLogout />}
               title={t("Logout")}
               onClick={() => {
@@ -125,59 +125,59 @@ const Setting = ({ isLogin, closeMenu }) => {
         )}
         {isLogin && (
           <div className='py-1 border-b border-primary'>
-            <ButtonRow
+            <ButtonRowIconStart
               icon={<IconYoutubeStudio />}
               title={t("YoutubeStudio")}
             />
-            <ButtonRow
+            <ButtonRowIconStart
               icon={<IconMemberShip />}
               title={t("BillAndSubscribe")}
             />
           </div>
         )}
         <div className='py-1 border-b border-primary'>
-          <ButtonRow
+          <ButtonRowIconStart
             icon={<IconGuard />}
             title={t("YourData")}
           />
-          <ButtonRow
+          <ButtonRowIconStart
             icon={<IconMoon />}
             title={`${t("Theme")}: ${theme == 'light' ? t('Light') : t('Dark')}`}
             onClick={changeTheme}
             caret={true}
           />
-          <ButtonRow
+          <ButtonRowIconStart
             icon={<IconLanguage />}
             title={`${t("Language")}: ${t("Vietnamese")}`}
             caret={true}
           />
-          <ButtonRow
+          <ButtonRowIconStart
             icon={<IconShield />}
             title={`${t("LimitMode")}: ${t("On")}`}
             caret={true}
           />
-          <ButtonRow
+          <ButtonRowIconStart
             icon={<IconEarth />}
             title={`${t("Location")}: ${t("Vietnamese")}`}
             caret={true}
           />
-          <ButtonRow
+          <ButtonRowIconStart
             icon={<IconKeyboard />}
             title={t("Shortcut")}
           />
         </div>
         <div className='py-1 border-b border-primary'>
-          <ButtonRow
+          <ButtonRowIconStart
             icon={<IconSetting />}
             title={t("Setting")}
           />
         </div>
         <div className='py-1'>
-          <ButtonRow
+          <ButtonRowIconStart
             icon={<IconHelp />}
             title={t("Help")}
           />
-          <ButtonRow
+          <ButtonRowIconStart
             icon={<IconFeedback />}
             title={t("SendFeedback")}
           />
@@ -187,17 +187,5 @@ const Setting = ({ isLogin, closeMenu }) => {
   )
 }
 
-const ButtonRow = ({ icon, title, caret, onClick }) => {
-
-  return (
-    <button
-      className='w-full h-10 flex flex-row items-center px-4 hover:bg-rgb-242 dark:hover:bg-rgb-62 transition-colors'
-      onClick={onClick}>
-      <div className='size-6 mr-4'>{icon}</div>
-      <span className='flex-1 text-left mr-4 line-clamp-1'>{title}</span>
-      {caret && (<IconCaret />)}
-    </button>
-  )
-}
 
 export default ButtonAvatarSetting
