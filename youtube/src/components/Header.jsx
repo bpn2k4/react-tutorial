@@ -13,7 +13,7 @@ import Utils from '../utils'
 const Header = () => {
 
   return (
-    <header className={twMerge('h-14 fixed top-0 left-0 right-2 px-4 flex flex-row items-center justify-between bg-primary')}>
+    <header className={twMerge('h-14 z-[4] fixed top-0 left-0 right-2 px-4 flex flex-row items-center justify-between bg-primary')}>
       <div className='flex flex-row center'>
         <CircleButton
           icon={<IconThreeLine />}

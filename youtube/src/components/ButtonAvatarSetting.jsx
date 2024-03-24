@@ -1,11 +1,13 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { twMerge } from 'tailwind-merge'
 
 import CircleButton from './CircleButton'
 import ButtonRowIconStart from './ButtonRowIconStart'
 import {
+  IconArrow,
   IconChangeAccount,
+  IconCheck,
   IconEarth,
   IconFeedback,
   IconGoogle,
@@ -23,6 +25,7 @@ import {
 } from './Icon'
 import useTheme from '../hooks/useTheme'
 import useStore from '../hooks/useStore'
+import useForwardRef from '../hooks/useForwardRef'
 
 const ButtonAvatarSetting = () => {
 
@@ -30,6 +33,7 @@ const ButtonAvatarSetting = () => {
   const { isLogin } = useStore()
   const buttonRef = useRef()
   const menuRef = useRef()
+  const ref = useForwardRef()
 
   const closeMenu = () => {
     setShow(false)
@@ -45,6 +49,12 @@ const ButtonAvatarSetting = () => {
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
+
+  useLayoutEffect(() => {
+    if (show && ref?.setType) {
+      ref?.setType(SettingTypes.DEFAULT)
+    }
+  }, [show])
 
   return (
     <div className='relative'>
@@ -67,25 +77,46 @@ const ButtonAvatarSetting = () => {
       </div>
       <div
         className={twMerge(
-          'absolute top-10 right-0 bg-modal rounded-lg overflow-hidden transition-all origin-top-right',
-          'w-[300px] min-h-40',
+          'absolute z-[4] top-10 right-0 bg-modal rounded-lg overflow-hidden transition-all origin-top-right',
+          'w-[300px] min-h-24',
           show ? 'scale-100' : 'scale-0'
         )}
         ref={menuRef}>
-        <Setting isLogin={isLogin} closeMenu={closeMenu} />
+        <Setting isLogin={isLogin} forwardRef={ref} closeMenu={closeMenu} />
       </div>
     </div>
   )
 }
 
-const Setting = ({ isLogin, closeMenu }) => {
+const SettingTypes = {
+  DEFAULT: 'DEFAULT',
+  THEME: 'THEME',
+  LANGUAGE: 'LANGUAGE',
+  LIMIT: 'LIMIT',
+  LOCATION: 'LOCATION',
+}
+
+const Setting = ({ isLogin, closeMenu, forwardRef }) => {
 
   const { t } = useTranslation()
-  const { theme, changeTheme } = useTheme()
+  const { theme } = useTheme()
   const { logout } = useStore()
+  const [type, setType] = useState(SettingTypes.DEFAULT)
+  forwardRef.setType = setType
+
+  switch (type) {
+    case SettingTypes.THEME:
+      return <ThemeMenu onClickBack={() => setType(SettingTypes.DEFAULT)} />
+    case SettingTypes.LANGUAGE:
+      return <LanguageMenu onClickBack={() => setType(SettingTypes.DEFAULT)} />
+    case SettingTypes.LIMIT:
+      return <LanguageMenu onClickBack={() => setType(SettingTypes.DEFAULT)} />
+    case SettingTypes.LOCATION:
+      return <LanguageMenu onClickBack={() => setType(SettingTypes.DEFAULT)} />
+  }
 
   return (
-    <div className=''>
+    <div className='text-sm'>
       {isLogin && (
         <div className='w-full flex flex-row p-4 border-b border-primary'>
           <img
@@ -94,12 +125,12 @@ const Setting = ({ isLogin, closeMenu }) => {
           <div className='flex flex-col ml-4 items-start'>
             <span className='line-clamp-1'>Bùi Phương Nam</span>
             <span className='line-clamp-1'>@buiphuongnam911</span>
-            <button className='text-sm mt-1 text-[#3ea6ff]'>{t('YourChannel')}</button>
+            <button className='mt-1 text-[#3ea6ff]'>{t('YourChannel')}</button>
           </div>
         </div>
       )}
       <div className={twMerge(
-        'w-full overflow-y-auto text-sm',
+        'w-full overflow-y-auto',
         isLogin ? 'max-h-[calc(100vh-154px)]' : 'max-h-[calc(100vh-100px)]'
       )}>
         {isLogin && (
@@ -143,13 +174,14 @@ const Setting = ({ isLogin, closeMenu }) => {
           <ButtonRowIconStart
             icon={<IconMoon />}
             title={`${t("Theme")}: ${theme == 'light' ? t('Light') : t('Dark')}`}
-            onClick={changeTheme}
+            onClick={() => setType(SettingTypes.THEME)}
             caret={true}
           />
           <ButtonRowIconStart
             icon={<IconLanguage />}
             title={`${t("Language")}: ${t("Vietnamese")}`}
             caret={true}
+            onClick={() => setType(SettingTypes.LANGUAGE)}
           />
           <ButtonRowIconStart
             icon={<IconShield />}
@@ -158,7 +190,7 @@ const Setting = ({ isLogin, closeMenu }) => {
           />
           <ButtonRowIconStart
             icon={<IconEarth />}
-            title={`${t("Location")}: ${t("Vietnamese")}`}
+            title={`${t("Location")}: ${t("Vietnam")}`}
             caret={true}
           />
           <ButtonRowIconStart
@@ -182,6 +214,68 @@ const Setting = ({ isLogin, closeMenu }) => {
             title={t("SendFeedback")}
           />
         </div>
+      </div>
+    </div>
+  )
+}
+
+const LanguageMenu = ({ onClickBack }) => {
+
+  const { t, i18n } = useTranslation()
+
+  const languages = [
+    { name: t("Vietnamese"), value: 'vi' },
+    { name: t("English"), value: 'en' },
+  ]
+
+  return (
+    <SubMenu
+      title={t('SelectYourLanguage')}
+      onClickBack={onClickBack}>
+      {languages.map(({ name, value }, index) => (
+        <ButtonRowIconStart
+          key={index}
+          icon={value == i18n.language ? <IconCheck /> : ''}
+          title={name}
+          onClick={() => i18n.changeLanguage(value)} />
+      ))}
+    </SubMenu>
+  )
+}
+
+const ThemeMenu = ({ onClickBack }) => {
+
+  const { t } = useTranslation()
+  const { theme, changeTheme } = useTheme()
+
+  return (
+    <SubMenu
+      title={t('Theme')}
+      onClickBack={onClickBack}>
+      <ButtonRowIconStart
+        icon={theme == 'light' ? <IconCheck /> : ''}
+        title={t('Light')}
+        onClick={theme == 'light' ? () => 1 : changeTheme} />
+      <ButtonRowIconStart
+        icon={theme == 'dark' ? <IconCheck /> : ''}
+        title={t('Dark')}
+        onClick={theme == 'dark' ? () => 1 : changeTheme} />
+    </SubMenu>
+  )
+}
+
+const SubMenu = ({ title, onClickBack, children }) => {
+
+  return (
+    <div className='text-sm'>
+      <div className='w-full h-12 flex flex-row items-center border-b border-primary px-1 gap-1'>
+        <CircleButton
+          icon={<IconArrow />}
+          onClick={onClickBack} />
+        <span className='line-clamp-1'>{title}</span>
+      </div>
+      <div className={twMerge('w-full overflow-y-auto max-h-[calc(100vh-100px)] py-1')}>
+        {children}
       </div>
     </div>
   )

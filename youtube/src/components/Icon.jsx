@@ -165,6 +165,18 @@ export const IconClock = ({ className }) => (
     <path d="M14.97 16.95 10 13.87V7h2v5.76l4.03 2.49-1.06 1.7zM12 3c-4.96 0-9 4.04-9 9s4.04 9 9 9 9-4.04 9-9-4.04-9-9-9m0-1c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z" />
   </svg>
 )
+export const IconArrow = ({ className }) => (
+  <svg viewBox="0 0 24 24" className={twMerge('w-6 h-6 fill-current', className)}>
+    <path d="M21 11v1H5.64l6.72 6.72-.71.71-7.93-7.93 7.92-7.92.71.71L5.64 11H21z">
+    </path>
+  </svg>
+)
+export const IconCheck = ({ className }) => (
+  <svg viewBox="0 0 24 24" className={twMerge('w-6 h-6 fill-current', className)}>
+    <path d="m9 18.7-5.4-5.4.7-.7L9 17.3 20.6 5.6l.7.7L9 18.7z">
+    </path>
+  </svg>
+)
 export const IconPlaylist = ({ className }) => (
   <svg viewBox="0 0 24 24" className={twMerge('w-6 h-6 fill-current', className)}>
     <path d="M22 7H2v1h20V7zm-9 5H2v-1h11v1zm0 4H2v-1h11v1zm2 3v-8l7 4-7 4z" />
@@ -198,6 +210,12 @@ export const IconNews = ({ className }) => (
 export const IconTrophy = ({ className }) => (
   <svg viewBox="0 0 24 24" className={twMerge('w-6 h-6 fill-current', className)}>
     <path d="M18 5V2H6v3H3v6l3.23 1.61c.7 2.5 2.97 4.34 5.69 4.38L8 19v3h8v-3l-3.92-2.01c2.72-.04 4.99-1.88 5.69-4.38L21 11V5h-3zM6 11.38l-2-1V6h2v5.38zM15 21H9v-1.39l3-1.54 3 1.54V21zm2-10c0 2.76-2.24 5-5 5s-5-2.24-5-5V3h10v8zm3-.62-2 1V6h2v4.38z" />
+  </svg>
+)
+export const IconVerify = ({ className }) => (
+  <svg viewBox="0 0 24 24" className={twMerge('w-6 h-6 fill-current', className)}>
+    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+    </path>
   </svg>
 )
 export const IconYoutubeRed = ({ className }) => (
