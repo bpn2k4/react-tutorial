@@ -47,6 +47,13 @@ const Utils = {
     isShow: true,
     show: () => true,
     hide: () => true,
+  },
+
+  HomeSideBar: {
+    isShow: true,
+    isMount: false,
+    show: () => true,
+    hide: () => true,
   }
 }
 

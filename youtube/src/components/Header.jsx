@@ -17,7 +17,19 @@ const Header = () => {
       <div className='flex flex-row center'>
         <CircleButton
           icon={<IconThreeLine />}
-          onClick={() => Utils.SideBarLeft.show()}
+          onClick={() => {
+            if (Utils.HomeSideBar.isMount) {
+              if (Utils.HomeSideBar.isShow) {
+                Utils.HomeSideBar.hide()
+              }
+              else {
+                Utils.HomeSideBar.show()
+              }
+            }
+            else {
+              Utils.SideBarLeft.show()
+            }
+          }}
         />
         <Link to='/' className='px-4'>
           <IconYoutubeLogo />

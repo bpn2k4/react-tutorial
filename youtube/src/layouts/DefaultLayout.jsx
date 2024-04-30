@@ -6,7 +6,7 @@ const DefaultLayout = ({ children }) => {
   return (
     <Container>
       <Header />
-      <div className='mt-14'>
+      <div className='pt-14 h-full overflow-y-auto'>
         {children}
       </div>
     </Container>

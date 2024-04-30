@@ -18,7 +18,7 @@ const ItemVideo = ({ video }) => {
       key={video.id}
       className='flex flex-col group'>
       <div className='relative'>
-        <Link>
+        <Link to="/watch">
           <img
             className='w-full aspect-video bg-no-repeat object-contain rounded-lg'
             src={`/${video.thumbnail}`} />

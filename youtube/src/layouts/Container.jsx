@@ -7,7 +7,7 @@ const Container = ({ children }) => {
   const { theme } = useTheme()
 
   return (
-    <div className={twMerge('w-screen h-dvh relative overflow-y-auto bg-primary text-primary', theme == 'light' ? 'track-light' : 'track-dark')}>
+    <div className={twMerge('w-dvw h-dvh relative overflow-y-auto bg-primary text-primary', theme == 'light' ? 'track-light' : 'track-dark')}>
       {children}
     </div>
   )
