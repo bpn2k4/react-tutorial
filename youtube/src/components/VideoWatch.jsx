@@ -2,6 +2,8 @@ import { Link } from "react-router-dom"
 import { IconCaret, IconCut, IconDownload, IconLike, IconNoNotify, IconNotify, IconNotifyActive, IconShare, IconThank, IconThreeDot, IconUnSubscribe, IconVerify } from "./Icon"
 import { useEffect, useRef, useState } from "react"
 import { twMerge } from "tailwind-merge"
+import VideoDescription from "./VideoDescription"
+import VideoControl from "./VideoControl"
 
 const VideoWatch = () => {
 
@@ -9,10 +11,11 @@ const VideoWatch = () => {
 
   return (
     <div className="w-full">
-      <div className="w-full aspect-video">
+      <div className="w-full aspect-video relative">
         <img
           className="w-full h-full rounded-xl"
           src="/thumbnail-1ae18e5b-7fb6-4aab-a8fb-74b5893543ba.jpg" />
+        <VideoControl />
       </div>
       <div className="mt-3">
         <h1 className="font-bold text-xl leading-7 line-clamp-2">
@@ -79,9 +82,7 @@ const VideoWatch = () => {
           <IconThreeDot className='rotate-90' />
         </button>
       </div>
-      <div className="mt-3 rounded-xl">
-
-      </div>
+      <VideoDescription />
     </div>
   )
 }
