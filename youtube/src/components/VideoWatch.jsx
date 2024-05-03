@@ -89,7 +89,7 @@ const VideoWatch = () => {
 
 const ButtonSubscribe = () => {
 
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
   const buttonRef = useRef()
   const menuRef = useRef()
 
