@@ -44,7 +44,7 @@ const VideoWatch = () => {
           </div>
         </div>
         <div className="flex flex-row items-center ml-5 gap-3">
-          <button className="h-9 center px-4 rounded-full text-sm font-[500] dark:bg-rgb-241 dark:text-rgb-15 dark:hover:bg-rgb-217">
+          <button className="h-9 center px-4 rounded-full text-sm font-[500] dark:bg-rgb-241 dark:text-rgb-15 dark:hover:bg-rgb-217 active:scale-98 transition-all">
             Join
           </button>
           <ButtonSubscribe />
@@ -62,19 +62,19 @@ const VideoWatch = () => {
             <IconLike className='rotate-0' />
           </button>
         </div>
-        <button className="center gap-[6px] rounded-full dark:bg-rgb-40 dark:hover:bg-rgb-64 pl-3 pr-4">
+        <button className="center gap-[6px] rounded-full dark:bg-rgb-40 dark:hover:bg-rgb-64 pl-3 pr-4 active:scale-98 transition-all">
           <IconShare />
           <span>Share</span>
         </button>
-        <button className="center gap-[6px] rounded-full dark:bg-rgb-40 dark:hover:bg-rgb-64 pl-3 pr-4">
+        <button className="center gap-[6px] rounded-full dark:bg-rgb-40 dark:hover:bg-rgb-64 pl-3 pr-4 active:scale-98 transition-all">
           <IconDownload />
           <span>Download</span>
         </button>
-        <button className="center gap-[6px] rounded-full dark:bg-rgb-40 dark:hover:bg-rgb-64 pl-3 pr-4">
+        <button className="center gap-[6px] rounded-full dark:bg-rgb-40 dark:hover:bg-rgb-64 pl-3 pr-4 active:scale-98 transition-all">
           <IconThank />
           <span>Thanks</span>
         </button>
-        <button className="center gap-[6px] rounded-full dark:bg-rgb-40 dark:hover:bg-rgb-64 pl-3 pr-4">
+        <button className="center gap-[6px] rounded-full dark:bg-rgb-40 dark:hover:bg-rgb-64 pl-3 pr-4 active:scale-98 transition-all">
           <IconCut />
           <span>Clip</span>
         </button>
@@ -107,7 +107,7 @@ const ButtonSubscribe = () => {
   return (
     <div className="relative">
       <button
-        className="h-9 flex flex-row gap-[6px] items-center justify-center dark:bg-rgb-40 dark:hover:bg-rgb-64 rounded-full px-2"
+        className="h-9 flex flex-row gap-[6px] items-center justify-center dark:bg-rgb-40 dark:hover:bg-rgb-64 rounded-full px-2 active:scale-99 transition-all"
         ref={buttonRef}
         onClick={() => setShow(!show)}>
         <IconNotify />
