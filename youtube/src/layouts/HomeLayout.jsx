@@ -14,15 +14,8 @@ const HomeLayout = ({ children }) => {
     },
     hide: () => {
       setShowHomeSideBar(false)
-    },
-    isMount: true,
-  }
-
-  useEffect(() => {
-    return () => {
-      Utils.HomeSideBar.isMount = false
     }
-  }, [])
+  }
 
   return (
     <div className="">

@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import GridVideo from '../components/GridVideo'
 
 const Home = () => {
@@ -11,4 +12,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default memo(Home)

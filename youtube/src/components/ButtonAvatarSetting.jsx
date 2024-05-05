@@ -29,7 +29,7 @@ import useForwardRef from '../hooks/useForwardRef'
 
 const ButtonAvatarSetting = () => {
 
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
   const { isLogin } = useStore()
   const buttonRef = useRef()
   const menuRef = useRef()

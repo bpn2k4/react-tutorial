@@ -37,7 +37,7 @@ const VideoWatch = () => {
                 </span>
               </Link>
               <div className="ml-1">
-                <IconVerify className='w-[14px] h-[14px] dark:fill-rgb-170' />
+                <IconVerify className='w-[14px] h-[14px] fill-rgb-95 dark:fill-rgb-170' />
               </div>
             </div>
             <div className="dark:text-rgb-170 text-xs leading-[18px]">7.42M subscribers</div>
@@ -116,7 +116,7 @@ const ButtonSubscribe = () => {
       </button>
       <div
         className={twMerge(
-          "absolute w-[172px] dark:bg-rgb-40 py-2 rounded-lg top-0 left-full origin-top-left   transition-all",
+          "absolute w-[172px] bg-white dark:bg-rgb-40 shadow-primary py-2 rounded-lg top-0 left-full origin-top-left transition-all",
           show ? 'scale-100' : 'scale-0'
         )}
         ref={menuRef}>

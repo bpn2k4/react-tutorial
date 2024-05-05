@@ -1,5 +1,5 @@
 import { twMerge } from 'tailwind-merge'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import { IconThreeLine, IconYoutubeLogo } from './Icon'
 import useStore from '../hooks/useStore'
@@ -12,13 +12,15 @@ import Utils from '../utils'
 
 const Header = () => {
 
+  const { pathname } = useLocation()
+
   return (
     <header className={twMerge('h-14 z-[4] fixed top-0 left-0 right-2 px-4 flex flex-row items-center justify-between bg-primary')}>
       <div className='flex flex-row center'>
         <CircleButton
           icon={<IconThreeLine />}
           onClick={() => {
-            if (Utils.HomeSideBar.isMount) {
+            if (pathname == '/') {
               if (Utils.HomeSideBar.isShow) {
                 Utils.HomeSideBar.hide()
               }
