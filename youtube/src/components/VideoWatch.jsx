@@ -44,7 +44,7 @@ const VideoWatch = () => {
           </div>
         </div>
         <div className="flex flex-row items-center ml-5 gap-3">
-          <button className="h-9 center px-4 rounded-full text-sm font-[500] dark:bg-rgb-241 dark:text-rgb-15 dark:hover:bg-rgb-217 active:scale-98 transition-all">
+          <button className="h-9 center px-4 rounded-full text-sm font-[500] bg-rgb-240 dark:bg-rgb-40 hover:bg-rgb-230 dark:hover:bg-rgb-65 active:scale-98 transition-all">
             Join
           </button>
           <ButtonSubscribe />
@@ -52,33 +52,33 @@ const VideoWatch = () => {
       </div>
       <div className="mt-3 flex flex-row gap-2 flex-wrap font-[500] text-sm">
         <div className="flex flex-row h-9">
-          <button className="center gap-[6px] dark:bg-rgb-40 dark:hover:bg-rgb-64 rounded-l-full pr-3 pl-2 relative">
+          <button className="center gap-[6px] bg-rgb-240 dark:bg-rgb-40 hover:bg-rgb-230 dark:hover:bg-rgb-65 rounded-l-full pr-3 pl-2 relative">
             <IconLike />
             <span>23K</span>
-            <div className="absolute right-[0px] top-[6px] bottom-[6px] w-[1px] dark:bg-rgb-101">
+            <div className="absolute right-[0px] top-[6px] bottom-[6px] w-[1px] bg-rgb-215 dark:bg-rgb-100">
             </div>
           </button>
-          <button className="rounded-r-full dark:bg-rgb-40 dark:hover:bg-rgb-64 pr-4 pl-2">
+          <button className="rounded-r-full bg-rgb-240 dark:bg-rgb-40 hover:bg-rgb-230 dark:hover:bg-rgb-65 pr-4 pl-2">
             <IconLike className='rotate-0' />
           </button>
         </div>
-        <button className="center gap-[6px] rounded-full dark:bg-rgb-40 dark:hover:bg-rgb-64 pl-3 pr-4 active:scale-98 transition-all">
+        <button className="center gap-[6px] rounded-full bg-rgb-240 dark:bg-rgb-40 hover:bg-rgb-230 dark:hover:bg-rgb-65 pl-3 pr-4 active:scale-98 transition-all">
           <IconShare />
           <span>Share</span>
         </button>
-        <button className="center gap-[6px] rounded-full dark:bg-rgb-40 dark:hover:bg-rgb-64 pl-3 pr-4 active:scale-98 transition-all">
+        <button className="center gap-[6px] rounded-full bg-rgb-240 dark:bg-rgb-40 hover:bg-rgb-230 dark:hover:bg-rgb-65 pl-3 pr-4 active:scale-98 transition-all">
           <IconDownload />
           <span>Download</span>
         </button>
-        <button className="center gap-[6px] rounded-full dark:bg-rgb-40 dark:hover:bg-rgb-64 pl-3 pr-4 active:scale-98 transition-all">
+        <button className="center gap-[6px] rounded-full bg-rgb-240 dark:bg-rgb-40 hover:bg-rgb-230 dark:hover:bg-rgb-65 pl-3 pr-4 active:scale-98 transition-all">
           <IconThank />
           <span>Thanks</span>
         </button>
-        <button className="center gap-[6px] rounded-full dark:bg-rgb-40 dark:hover:bg-rgb-64 pl-3 pr-4 active:scale-98 transition-all">
+        <button className="center gap-[6px] rounded-full bg-rgb-240 dark:bg-rgb-40 hover:bg-rgb-230 dark:hover:bg-rgb-65 pl-3 pr-4 active:scale-98 transition-all">
           <IconCut />
           <span>Clip</span>
         </button>
-        <button className="center rounded-full dark:bg-rgb-40 dark:hover:bg-rgb-64 size-9">
+        <button className="center rounded-full bg-rgb-240 dark:bg-rgb-40 hover:bg-rgb-230 dark:hover:bg-rgb-65 size-9">
           <IconThreeDot className='rotate-90' />
         </button>
       </div>
@@ -107,7 +107,7 @@ const ButtonSubscribe = () => {
   return (
     <div className="relative">
       <button
-        className="h-9 flex flex-row gap-[6px] items-center justify-center dark:bg-rgb-40 dark:hover:bg-rgb-64 rounded-full px-2 active:scale-99 transition-all"
+        className="h-9 flex flex-row gap-[6px] items-center justify-center bg-rgb-240 dark:bg-rgb-40 hover:bg-rgb-230 dark:hover:bg-rgb-65 rounded-full px-2 active:scale-99 transition-all"
         ref={buttonRef}
         onClick={() => setShow(!show)}>
         <IconNotify />
@@ -120,19 +120,19 @@ const ButtonSubscribe = () => {
           show ? 'scale-100' : 'scale-0'
         )}
         ref={menuRef}>
-        <button className="w-full h-9 pl-4 pr-3 dark:hover:bg-rgb-83 flex flex-row items-center gap-4">
+        <button className="w-full h-9 pl-4 pr-3 dark:hover:bg-rgb-85 flex flex-row items-center gap-4">
           <IconNotifyActive />
           <span>All</span>
         </button>
-        <button className="w-full h-9 pl-4 pr-3 dark:hover:bg-rgb-83 flex flex-row items-center gap-4">
+        <button className="w-full h-9 pl-4 pr-3 dark:hover:bg-rgb-85 flex flex-row items-center gap-4">
           <IconNotify />
           <span>Personalized</span>
         </button>
-        <button className="w-full h-9 pl-4 pr-3 dark:hover:bg-rgb-83 flex flex-row items-center gap-4">
+        <button className="w-full h-9 pl-4 pr-3 dark:hover:bg-rgb-85 flex flex-row items-center gap-4">
           <IconNoNotify />
           <span>None</span>
         </button>
-        <button className="w-full h-9 pl-4 pr-3 dark:hover:bg-rgb-83 flex flex-row items-center gap-4">
+        <button className="w-full h-9 pl-4 pr-3 dark:hover:bg-rgb-85 flex flex-row items-center gap-4">
           <IconUnSubscribe />
           <span>Unsubscribe</span>
         </button>

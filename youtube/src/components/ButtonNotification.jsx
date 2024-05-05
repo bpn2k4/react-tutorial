@@ -28,8 +28,8 @@ const ButtonNotification = ({ className }) => {
       <button
         className={twMerge(
           'w-10 h-10 rounded-full center active:scale-95 transition-all',
-          'hover:bg-rgb-217 active:bg-rgb-195',
-          'dark:hover:bg-rgb-61 dark:active:bg-rgb-60',
+          'hover:bg-rgb-215 active:bg-rgb-195',
+          'dark:hover:bg-rgb-60 dark:active:bg-rgb-60',
         )}
         ref={buttonRef}
         onClick={() => setShow(!show)}>
@@ -38,7 +38,7 @@ const ButtonNotification = ({ className }) => {
       <div
         className={twMerge(
           'absolute top-10 right-0 bg-modal rounded-lg overflow-hidden transition-all origin-top-right',
-          'w-[480px] min-h-40',
+          'w-[480px] min-h-40 shadow-primary',
           show ? 'scale-100' : 'scale-0'
         )}
         ref={menuRef}>

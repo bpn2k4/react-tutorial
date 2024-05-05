@@ -40,13 +40,13 @@ const ItemVideo = ({ video }) => {
               {video.title}
             </span>
           </Link>
-          <div className='flex flex-row gap-1 text-sm text-rgb-96 dark:text-rgb-170 items-center mt-1'>
+          <div className='flex flex-row gap-1 text-sm text-rgb-95 dark:text-rgb-170 items-center mt-1'>
             <Link>
-              <span className='hover:text-rgb-15 dark:hover:text-rgb-241'>{video.channel.channel_name}</span>
+              <span className='hover:text-rgb-15 dark:hover:text-rgb-240'>{video.channel.channel_name}</span>
             </Link>
             {video.channel.channel_verified && <IconVerify className='w-[14px] h-[14px]' />}
           </div>
-          <div className='text-rgb-96 dark:text-rgb-170 text-sm gap-1 flex flex-row'>
+          <div className='text-rgb-95 dark:text-rgb-170 text-sm gap-1 flex flex-row'>
             <span>{view}</span>
             <span>{'•'}</span>
             <span>{publish}</span>

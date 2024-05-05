@@ -19,12 +19,12 @@ const SearchBar = () => {
         <div className={twMerge(
           'w-16 h-10 center cursor-pointer transition-all',
           'border border-secondary rounded-tr-full rounded-br-full',
-          'hover:bg-rgb-217 active:bg-rgb-195 dark:hover:bg-rgb-61 dark:active:bg-rgb-60'
+          'hover:bg-rgb-215 active:bg-rgb-195 dark:hover:bg-rgb-60 dark:active:bg-rgb-60'
         )}>
           <IconSearch />
         </div>
       </div>
-      <CircleButton className='ml-4 dark:bg-rgb-39 bg-rgb-242'>
+      <CircleButton className='ml-4 dark:bg-rgb-40 bg-rgb-240'>
         <IconMic />
       </CircleButton>
     </div>

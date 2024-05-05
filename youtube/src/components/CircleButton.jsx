@@ -6,8 +6,8 @@ const CircleButton = ({ children, className, icon, onClick }) => {
     <button
       className={twMerge(
         'w-10 h-10 rounded-full center active:scale-95 transition-all',
-        'hover:bg-rgb-217 active:bg-rgb-195',
-        'dark:hover:bg-rgb-61 dark:active:bg-rgb-60',
+        'hover:bg-rgb-215 active:bg-rgb-195',
+        'dark:hover:bg-rgb-60 dark:active:bg-rgb-60',
         className
       )}
       onClick={onClick}>

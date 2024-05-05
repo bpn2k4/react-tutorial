@@ -29,7 +29,7 @@ import useForwardRef from '../hooks/useForwardRef'
 
 const ButtonAvatarSetting = () => {
 
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(true)
   const { isLogin } = useStore()
   const buttonRef = useRef()
   const menuRef = useRef()
@@ -78,7 +78,7 @@ const ButtonAvatarSetting = () => {
       <div
         className={twMerge(
           'absolute z-[4] top-10 right-0 bg-modal rounded-lg overflow-hidden transition-all origin-top-right',
-          'w-[300px] min-h-24',
+          'w-[300px] min-h-24 shadow-[0_4px_32px_0_rgba(0,0,0,0.1)]',
           show ? 'scale-100' : 'scale-0'
         )}
         ref={menuRef}>

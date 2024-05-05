@@ -7,7 +7,7 @@ const VideoDescription = ({ className }) => {
 
   return (
     <div className={twMerge(
-      "mt-3 w-full p-3 bg-rgb-39 rounded-xl text-sm",
+      "mt-3 w-full p-3 bg-rgb-240 dark:bg-rgb-40 rounded-xl text-sm",
       className
     )}>
       <div className="font-[500] gap-2 flex flex-row">
