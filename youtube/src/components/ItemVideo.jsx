@@ -3,8 +3,9 @@ import { useTranslation } from 'react-i18next'
 import Utils from '../utils'
 import { Link } from 'react-router-dom'
 import { IconThreeDot, IconVerify } from './Icon'
+import { twMerge } from 'tailwind-merge'
 
-const ItemVideo = ({ video }) => {
+const ItemVideo = ({ video, className, type }) => {
 
   const { t } = useTranslation()
 
@@ -16,22 +17,35 @@ const ItemVideo = ({ video }) => {
   return (
     <div
       key={video.id}
-      className='flex flex-col group'>
-      <div className='relative'>
+      className={twMerge(
+        'flex flex-col group', 
+        type == 'row' && 'flex-row',
+        className
+        )}>
+      <div className={twMerge(
+        'relative',
+        type == 'row' && 'w-[168px]'
+      )}>
         <Link to="/watch">
           <img
-            className='w-full aspect-video bg-no-repeat object-contain rounded-lg'
+            className={'w-full aspect-video bg-no-repeat rounded-lg'}
             src={`/${video.thumbnail}`} />
         </Link>
         <span className='absolute bottom-1 right-1 rounded text-xs leading-3 font-semibold !text-white px-1 py-[3px] !bg-black/80'>{video.length}</span>
       </div>
-      <div className='w-full flex flex-row gap-3 py-3 pr-4 relative'>
+      <div className={twMerge(
+        'flex flex-row gap-3 py-3 pr-4 relative',
+        type == 'row' && 'flex-1 py-0'
+      )}>
         <button className='z-[1] absolute top-[11px] -right-1'>
           <IconThreeDot className='opacity-0 group-hover:opacity-100 transition-opacity' />
         </button>
         <Link>
           <img
-            className='size-9 rounded-full'
+            className={twMerge(
+              'size-9 rounded-full',
+              type == 'row' && 'hidden'
+            )}
             src={`/${video.channel.channel_image}`} />
         </Link>
         <div className='flex flex-col flex-1 z-[2]'>
